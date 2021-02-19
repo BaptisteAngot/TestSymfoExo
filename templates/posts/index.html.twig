@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PostsController!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        Voici tout les posts : <br>
+        {% for post in Posts %}
+            <div class="row">
+                <div class="col-sm">
+                    {{ post.title }}
+                </div>
+                <div class="col-sm">
+                    {{ post.body }}
+                </div>
+                <div class="col-sm">
+                    {{ post.date | date("m/d/Y") }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
